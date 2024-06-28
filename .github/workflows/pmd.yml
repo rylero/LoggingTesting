@@ -12,7 +12,7 @@ jobs:
           java-version: '17'
       - uses: pmd/pmd-github-action@v2
         with:
-          rulesets: './pmdruleset.xml'
+          rulesets: 'pmdruleset.xml'
           analyzeModifiedFilesOnly: false
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v3
