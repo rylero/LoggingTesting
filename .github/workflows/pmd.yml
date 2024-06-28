@@ -1,9 +1,6 @@
 name: PMD Testing Tool
 on: [push, pull_request]
 
-permissions:
-  actions: read, write-all
-
 jobs:
   build:
     runs-on: ubuntu-latest
