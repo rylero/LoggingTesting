@@ -52,7 +52,6 @@ public class Robot extends TimedRobot {
         }
       }
     } else {
-      System.out.println("Testing PMD");
     }
     m_arm.reachSetpoint();
   }
