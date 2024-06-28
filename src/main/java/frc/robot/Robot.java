@@ -41,6 +41,8 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopPeriodic() {
+    // testing pmd comment checking
+    // it shouldnt allow this code or the word idiot in a comment
     if (true) {
       if (m_joystick.getTriggerPressed()) {
         if (armState == Constants.kArmState.Lowered) {
