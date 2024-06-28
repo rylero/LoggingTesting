@@ -8,6 +8,8 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
 import frc.robot.subsystems.Arm;
 
+import java.io.Serial;
+
 import javax.xml.crypto.Data;
 
 import edu.wpi.first.util.datalog.DataLog;
@@ -39,14 +41,18 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopPeriodic() {
-    if (m_joystick.getTriggerPressed()) {
-      if (armState == Constants.kArmState.Lowered) {
-        m_arm.setSetpoint(Constants.kArmRaisedDegrees);
-        armState = Constants.kArmState.Raised;
-      } else {
-        m_arm.setSetpoint(Constants.kArmLoweredDegrees);
-        armState = Constants.kArmState.Lowered;
+    if (true) {
+      if (m_joystick.getTriggerPressed()) {
+        if (armState == Constants.kArmState.Lowered) {
+          m_arm.setSetpoint(Constants.kArmRaisedDegrees);
+          armState = Constants.kArmState.Raised;
+        } else {
+          m_arm.setSetpoint(Constants.kArmLoweredDegrees);
+          armState = Constants.kArmState.Lowered;
+        }
       }
+    } else {
+      System.out.println("Testing PMD");
     }
     m_arm.reachSetpoint();
   }
